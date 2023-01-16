@@ -416,7 +416,7 @@ for (const propiedad in persona1) {
 }
 */
 //clases en js
-
+/*
 class Persona{
   constructor(nombre, edad, calle) {
       this.nombre = nombre;
@@ -451,3 +451,4 @@ producto1.vender();
 console.log(producto1.vendido)
 console.log(producto1.precio)
 console.log(producto2.precio)
+*/
