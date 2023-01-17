@@ -120,4 +120,8 @@ console.log(actualizado)
 //si modifico la nueva variable no modifico el array original
 console.log(cursos)
 
-//6
+//6 El método reduce() nos permite obtener un único valor tras iterar sobre el array. Funciona como un método que resume el array a un único valor de retorno. 
+const total = cursos.reduce((acumulador, elemento) => acumulador + elemento.precio, 0)
+
+console.log(total) // 53000
+
