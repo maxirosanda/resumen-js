@@ -101,3 +101,23 @@ console.log( cursos.some((el) => el.nombre == "VueJS"))
 // false
 
 //5) El método map() crea un nuevo array con todos los elementos del original transformados según las operaciones de la función enviada por parámetro. Tiene la misma cantidad de elementos pero los almacenados son el return de la función:
+const nombres = cursos.map((el) => el.nombre)
+console.log(nombres)
+// [ 'Javascript', 'ReactJS', 'AngularJS', 'Desarrollo Web' ]
+
+//si modifico la nueva variable no modifico el array original
+nombres[0] = "maxiJS@"
+console.log(cursos)
+
+const actualizado = cursos.map((el) => {
+  return {
+      nombre: el.nombre,
+      precio: el.precio * 1.25
+  }
+})
+
+console.log(actualizado)
+//si modifico la nueva variable no modifico el array original
+console.log(cursos)
+
+//6
