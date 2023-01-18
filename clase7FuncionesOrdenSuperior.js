@@ -164,19 +164,25 @@ numeros3.sort((a,b) => b - a)
 */
 
 const sort = (arr,fs) =>{
-
+  let arr3 = []
   for(let i = 0 ; i < arr.length ; i++){
+    let arr2 =[arr[i]]
     for(let j = 0 ; j < arr.length ; j++){
       let condicion = fs(arr[i],arr[j])
-      console.log(condicion)
+      if(condicion >0){
+        arr2.unshift(arr[j])
+      }else if(condicion < 0){
+        arr2.push(arr[j])
+      }
     }
-         
+    arr3[arr2.indexOf(arr[i])] = arr[i]      
   }
+  console.log(arr3)
 }
-let numeros4 = [12,45,1,34,55]
+let numeros4 = [12,45,1,34,55,0,36,22,17,18,19]
 /*
 [12,45,1,34,55]
 [45,34,55,12,1]
 [55,45,34,12,1]
 */
-sort(numeros4,(a,b)=> b - a)
+sort(numeros4,(a,b)=> a - b)
