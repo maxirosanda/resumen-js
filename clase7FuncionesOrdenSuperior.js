@@ -165,7 +165,7 @@ numeros3.sort((a,b) => b - a)
 
 const sort = (arr,fs) =>{
   for(let i = 0 ; i < arr.length ; i++){
-    for(let j = arr.length ; j >= 0 ; i++){
+    for(let j = arr.length ; j >= 0 ; i--){
       console.log(i ,j)
     }
   }
