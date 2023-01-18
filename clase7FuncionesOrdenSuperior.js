@@ -125,3 +125,19 @@ const total = cursos.reduce((acumulador, elemento) => acumulador + elemento.prec
 
 console.log(total) // 53000
 
+// 7) El método sort() nos permite reordenar un array según un criterio que definamos. Recibe una función de comparación por parámetro que, a la vez, recibe dos elementos del array. La función retorna un valor numérico (1, -1, 0) que indica qué elemento se posiciona antes o después.(Este método es destructivo, es decir, modifica el array sobre el cual se llama.)
+const numeros2 = [5, 3, 2, 6, 1, 4]
+numeros2.sort((a, b) => a - b);  
+/* 
+[5, 3, 2, 6, 1, 4]
+[3, 5, 2, 6, 1, 4]
+[3, 2, 5, 6, 1, 4]
+[3, 2, 5, 6, 1, 4]
+[3, 2, 1, 6, 5, 4]
+[3, 2, 1, 6, 4, 5]
+[2, 3, 1, 6, 4, 5]
+[1, 2, 3, 4, 5, 6]
+*/
+console.log(numeros2)
+numeros2.sort((a, b) => b - a);  // [6, 5, 4, 3, 2, 1 ]
+console.log(numeros2)
