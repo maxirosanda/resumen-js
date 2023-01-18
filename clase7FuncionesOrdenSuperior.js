@@ -129,20 +129,29 @@ console.log(total) // 53000
 const numeros2 = [5, 3, 2, 6, 1, 4]
 numeros2.sort((a, b) => a - b);  
 /* 
-si da positiva la comparacion los numeros cambian de lugar
+si da positiva el numero b pasa delante del a (si ya esta adelante no se mueve)
+si da negativo el numero b  pasa detras del a (si ya esta atras no se mueve)
+si da cero el numero a se pone alado del b (si ya estan alado no se mueven)
 [5, 3, 2, 6, 1, 4]
-[3, 2, 1, 6, 4, 5]
-[2, 1, 3, 6, 4, 5]
-[1, 2, 3, 6, 4, 5]
+[3, 2, 1, 4, 5, 6]
 [1, 2, 3, 4, 5, 6]
 */
 console.log(numeros2)
 numeros2.sort((a, b) => b - a);  
 /* 
 [5, 3, 2, 6, 1, 4]
-[6, 3, 2, 5, 1, 4]
-[6, 5, 2, 4, 1, 3]
-[6, 5, 4, 3, 1, 2]
+[6, 5, 3, 2, 1, 4]
+[6, 5, 3, 2, 1, 4]
 [6, 5, 4, 3, 2, 1]
 */
 console.log(numeros2)
+const numeros3 = [4,56,32,12,77,33,32]
+numeros3.sort((a,b) => a - b)
+/*
+[4,56,32,12,77,33,32]
+[4,32,12,33,32,56,77]
+[4,12,32,33,32,56,77]
+[4,12,32,32,33,56,77]
+
+*/
+numeros3
