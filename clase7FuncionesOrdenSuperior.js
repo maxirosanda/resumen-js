@@ -163,11 +163,23 @@ numeros3.sort((a,b) => b - a)
 [77,56,33,32,32,12,4]
 */
 
+
 const sort = (arr,fs) =>{
+  let arr2
   for(let i = 0 ; i < arr.length ; i++){
-    for(let j = arr.length ; j >= 0 ; j--){
-      console.log(i ,j)
+     arr2 = [arr[i]]
+    for(let j = arr.length - 1 ; j >= 0 ; j--){
+      let condicion = fs(i,j)
+      if(condicion >= 0){
+        arr2.unshift(arr[j])
+      }
+      else{
+        arr2.push(arr[j])
+      }
+      //arr = arr2
     }
   }
+  return arr2
 }
-sort([1,233,45],32)
+let numeros4 = [12,45,1]
+console.log(sort(numeros4,(a,b)=> a - b)) 
