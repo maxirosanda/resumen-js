@@ -162,3 +162,13 @@ numeros3.sort((a,b) => b - a)
 [77,56,33,32,12,32,4]
 [77,56,33,32,32,12,4]
 */
+
+const sort = (arr,fs) =>{
+  for(let i = 0 ; i < arr.length ; i++){
+    for(let j = arr.length ; j >= 0 ; i++){
+      console.log(i ,j)
+    }
+  }
+}
+
+sort([1,2,34],23)
