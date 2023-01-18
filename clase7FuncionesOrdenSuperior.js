@@ -188,5 +188,5 @@ const sort = (arr,fs) =>{
   }
   return arr
 }
-let numeros4 = [12,45,1,34,78,12,56,22,99,45,32,17]
+let numeros4 = [12,45,1,34,55]
 console.log(sort(numeros4,(a,b)=> b - a)) 
