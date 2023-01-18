@@ -129,6 +129,7 @@ console.log(total) // 53000
 const numeros2 = [5, 3, 2, 6, 1, 4]
 numeros2.sort((a, b) => a - b);  
 /* 
+se toma siempre el ultimo array y cada ciclo de comparacion comienza con el siguiente valor del array (se compara con todos los valores de array,tanto los de adelante como los de atras)
 si da positiva el numero b pasa delante del a (si ya esta adelante no se mueve)
 si da negativo el numero b  pasa detras del a (si ya esta atras no se mueve)
 si da cero el numero a se pone alado del b (si ya estan alado no se mueven)
