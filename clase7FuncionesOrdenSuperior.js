@@ -56,7 +56,7 @@ console.log(duplicado) // [2, 4, 6, 8]
 */
 //Métodos de búsqueda y transformación
 
-
+/*
 // 1) El método forEach() es similar al ejemplo porCadaUno anterior. Itera sobre el array y por cada elemento ejecuta la función que enviemos por parámetro, la cual recibe a su vez el elemento del array que se está recorriendo:
 const numeros = [1, 2, 3, 4, 5, 6]
 numeros.forEach( (num)=> {
@@ -128,18 +128,34 @@ console.log(total) // 53000
 // 7) El método sort() nos permite reordenar un array según un criterio que definamos. Recibe una función de comparación por parámetro que, a la vez, recibe dos elementos del array. La función retorna un valor numérico (1, -1, 0) que indica qué elemento se posiciona antes o después.(Este método es destructivo, es decir, modifica el array sobre el cual se llama.)
 const numeros2 = [5, 3, 2, 6, 1, 4]
 numeros2.sort((a, b) => a - b);  
-/* 
+//si da positiva el numero b pasa delante del a ,si da negativo el numero b  pasa detras del a ,si da cero el numero a se pone alado del b (si ya estan alado no se mueven)
 
-si da positiva el numero b pasa delante del a 
-si da negativo el numero b  pasa detras del a 
-si da cero el numero a se pone alado del b (si ya estan alado no se mueven)
 
-*/
 console.log(numeros2)
 numeros2.sort((a, b) => b - a);  
 
 console.log(numeros2)
 
+
+const items = [
+  { name: 'Pikachu', price: 21 },
+  { name: 'Charmander', price: 37 },
+  { name: 'Pidgey', price: 45 },
+  { name: 'Squirtle', price: 60 }
+]
+
+items.sort((a, b) => {
+  if (a.name > b.name) {
+      return 1;
+  }
+  if (a.name < b.name) {
+      return -1;
+  }
+  // a es igual a b
+  return 0;
+})
+console.log(items)
+*/
 //ejemplo del posible funcionamiento interno del metodo sort
 /*
 const sort = (arr,fs) =>{
@@ -171,3 +187,23 @@ let numeros3 = [12,45,1,34,55,0,36,22,17,18,19,19 ,45,3,2,7,65,8899,32,12,67,54,
 numeros3 = sort(numeros3,(a,b)=> b - a)
 console.log(numeros3)
 */
+
+
+const productos = [{ id: 1,  producto: "Arroz", precio: 125 },
+                  {  id: 2,  producto: "Fideo", precio: 70 },
+                  {  id: 3,  producto: "Pan"  , precio: 50},
+                  {  id: 4,  producto: "Flan" , precio: 100}]
+
+const buscado = productos.find(producto => producto.id === 3)
+console.log(buscado) //{id: 3, producto: "Pan", precio: 50}
+
+const existe = productos.some(producto => producto.nombre === “Harina”)
+console.log(existe ) // false
+
+const baratos = productos.filter(producto => producto.precio < 100)
+console.log(baratos)
+// [{id: 2,producto:"Fideo",precio:70},{id:3,producto:"Pan",precio: 50}]
+
+const listaNombres = productos.map(producto => producto.nombre)
+console.log(listaNombres);
+//[“Arroz”, “Fideo”, “Pan”, “Flan”]
