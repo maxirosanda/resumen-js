@@ -129,66 +129,45 @@ console.log(total) // 53000
 const numeros2 = [5, 3, 2, 6, 1, 4]
 numeros2.sort((a, b) => a - b);  
 /* 
-se toma siempre el ultimo array y cada ciclo de comparacion comienza con el siguiente valor del array (se compara con todos los valores de array,tanto los de adelante como los de atras)
-si da positiva el numero b pasa delante del a (si ya esta adelante no se mueve)
-si da negativo el numero b  pasa detras del a (si ya esta atras no se mueve)
+
+si da positiva el numero b pasa delante del a 
+si da negativo el numero b  pasa detras del a 
 si da cero el numero a se pone alado del b (si ya estan alado no se mueven)
-[5, 3, 2, 6, 1, 4]
-[3, 2, 1, 4, 5, 6]
-[1, 2, 3, 4, 5, 6]
+
 */
 console.log(numeros2)
 numeros2.sort((a, b) => b - a);  
-/* 
-[5, 3, 2, 6, 1, 4]
-[6, 5, 3, 2, 1, 4]
-[6, 5, 3, 2, 1, 4]
-[6, 5, 4, 3, 2, 1]
-*/
+
 console.log(numeros2)
-const numeros3 = [4,56,32,12,77,33,32]
-numeros3.sort((a,b) => a - b)
-/*
-[4,56,32,12,77,33,32]
-[4,32,12,33,32,56,77]
-[4,12,32,33,32,56,77]
-[4,12,32,32,33,56,77]
 
-*/
-numeros3.sort((a,b) => b - a)
+//ejemplo del posible funcionamiento interno del metodo sort
 /*
-[4,56,32,12,77,33,32]
-[32,33,77,12,32,56,4]
-[77,56,33,32,12,32,4]
-[77,56,33,32,32,12,4]
-*/
-
 const sort = (arr,fs) =>{
+
   let arr3 = []
+
   for(let i = 0 ; i < arr.length ; i++){
+
     let arr2 =[arr[i]]
     let contarIguales = 0
+
     for(let j = 0 ; j < arr.length ; j++){
+
       let condicion = fs(arr[i],arr[j])
-      if(condicion > 0){
-        arr2.unshift(arr[j])
-      }else if(condicion < 0){
-        arr2.push(arr[j])
-      } else if(condicion == 0){
-       contarIguales++
-      }
+
+      if(condicion > 0)       arr2.unshift(arr[j])
+      else if(condicion < 0)  arr2.push(arr[j])
+      else if(condicion == 0) contarIguales++ 
+
     }
-    for(let a = 0; a < contarIguales; a++){
-      arr3[arr2.indexOf(arr[i])+ a] = arr[i]     
-      }
+
+    for(let a = 0; a < contarIguales; a++) arr3[arr2.indexOf(arr[i])+ a] = arr[i] 
         
   }
-  console.log(arr3)
+  
+  return arr3
 }
-let numeros4 = [12,45,1,34,55,0,36,22,17,18,19,19]
-/*
-[12,45,1,34,55]
-[45,34,55,12,1]
-[55,45,34,12,1]
+let numeros3 = [12,45,1,34,55,0,36,22,17,18,19,19 ,45,3,2,7,65,8899,32,12,67,54,8899]
+numeros3 = sort(numeros3,(a,b)=> b - a)
+console.log(numeros3)
 */
-sort(numeros4,(a,b)=> a - b)
