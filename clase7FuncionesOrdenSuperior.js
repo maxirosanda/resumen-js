@@ -167,19 +167,25 @@ const sort = (arr,fs) =>{
   let arr3 = []
   for(let i = 0 ; i < arr.length ; i++){
     let arr2 =[arr[i]]
+    let contarIguales = 0
     for(let j = 0 ; j < arr.length ; j++){
       let condicion = fs(arr[i],arr[j])
-      if(condicion >0){
+      if(condicion > 0){
         arr2.unshift(arr[j])
       }else if(condicion < 0){
         arr2.push(arr[j])
+      } else if(condicion == 0){
+       contarIguales++
       }
     }
-    arr3[arr2.indexOf(arr[i])] = arr[i]      
+    for(let a = 0; a < contarIguales; a++){
+      arr3[arr2.indexOf(arr[i])+ a] = arr[i]     
+      }
+        
   }
   console.log(arr3)
 }
-let numeros4 = [12,45,1,34,55,0,36,22,17,18,19]
+let numeros4 = [12,45,1,34,55,0,36,22,17,18,19,19]
 /*
 [12,45,1,34,55]
 [45,34,55,12,1]
